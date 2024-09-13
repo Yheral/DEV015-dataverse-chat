@@ -1,0 +1,66 @@
+:root {
+  --celeste:#90eef9;
+  --rojo: #c00f0c;
+  --plomo:#d9d9d9;
+  --negro:#000;
+  --blanco:#ffff;
+ }
+header
+{
+  height: 50vh; /* Ocupa toda la altura de la viewport */
+  width:auto;
+  background-color: var(--rojo);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+body
+{
+    background-color: skyblue;
+    font-family: 'Montserrat', sans-serif; /* Cambia la fuente a Montserrat */
+    font-size: 20px;
+  }
+header h1 {
+  color:var(--blanco);
+  margin-bottom: 0;
+  }
+header p {
+  color: black;
+  margin:0;
+  font: 10px;
+}
+
+ul {
+  display:flex;
+  flex-wrap: wrap;
+  gap:20px;
+  flex-direction: row;
+}
+li {
+  display: flex;
+  box-sizing: border-box;
+  flex: 1 1 calc(25% - 20px);
+  background-color: var(--blanco); /* Color de fondo claro */
+  border: 0.3px solid var(--plomo);
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 10px 10px 10px rgba(2, 2, 2, 2); /* Sombra suave */
+  }
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.chat-button
+{
+  background-color: var(--rojo);
+  border-radius: 30px;
+  cursor: pointer;
+  color:var(--blanco)
+}
+
