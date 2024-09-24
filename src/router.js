@@ -1,5 +1,6 @@
 import {Chat} from "./views/Chat.js";
-
+import { Error } from "./views/Error.js";
+import { Apik } from "./views/ApiK.js";
 let ROUTES = {};
 let rootEl;
 
@@ -14,8 +15,8 @@ export const setRoutes = (routes) => {
   // optional Throw errors if routes doesn't define an /error route
   // assign ROUTES
 ROUTES=routes;
-}
 
+}
 export const queryStringToObject = (queryString) => {
   // convert query string to URLSearchParams
   const params=new URLSearchParams(queryString);
@@ -37,7 +38,7 @@ export const renderView = (pathname, props={}) => {
   }
   // find the correct view in ROUTES for the pathname
   // in case not found render the error view
-  const View = ROUTES[pathname] || ErrorView;
+  const View = ROUTES[pathname] || ROUTES['/error'];
   // render the correct view passing the value of props
   const viewElement = View(props)
   // add the view element to the DOM root element
@@ -45,8 +46,10 @@ export const renderView = (pathname, props={}) => {
 } 
 
 export const navigateTo = (pathname, props={}) => {
+  const queryString = new URLSearchParams(props).toString();
+  const newLink= `${pathname}${queryString ? '?' + queryString : ''}`;
   // update window history with pushState
-  window.history.pushState({}, pathname, window.location.origin + pathname);
+  window.history.pushState({}," ",newLink);
   // render the view with the pathname and props
   renderView(pathname,props);
 }

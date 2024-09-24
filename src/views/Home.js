@@ -1,4 +1,6 @@
 import data from "../data/dataset.js"
+//NOTA DE ERROR, como iba navegar si no importaste navigate
+import { navigateTo } from "../router.js"
 
 export function Home(props) {
     const viewEl = document.createElement('div');
@@ -8,7 +10,8 @@ export function Home(props) {
   `;
 
   // Crear los elementos <li> para cada dato
-  const listItems = data.map((element) => {
+  const listItems = data.map((element) => 
+  {
     const li = document.createElement('li');
     li.setAttribute('itemtype', 'http://schema.org/Organization');
     li.setAttribute('itemscope', '');
@@ -30,6 +33,11 @@ export function Home(props) {
         <button class="chat-button">Chatear</button>
       </div>
     `;
+    //Agregamos a nuestro button el evento para cambiar de vista
+  const chatButton=li.querySelector(".chat-button");
+  chatButton.addEventListener("click",()=>
+  navigateTo("/about",{name:element.name,id:element.id}));
+  
     return li;
   });
 

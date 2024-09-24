@@ -47,8 +47,12 @@ li {
   border: 0.3px solid var(--plomo);
   border-radius: 15px; /* Bordes redondeados */
   box-shadow: 10px 10px 10px rgba(2, 2, 2, 2); /* Sombra suave */
+  font:5px;
   }
-
+.card
+{
+  margin-left: 10px;
+}
 .card img {
   width: 100%;
   height: 200px;
@@ -63,4 +67,3 @@ li {
   cursor: pointer;
   color:var(--blanco)
 }
-
