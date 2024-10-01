@@ -36,7 +36,7 @@ export function Home(props) {
     //Agregamos a nuestro button el evento para cambiar de vista
   const chatButton=li.querySelector(".chat-button");
   chatButton.addEventListener("click",()=>
-  navigateTo("/about",{name:element.name,id:element.id}));
+  navigateTo("/chat",{name:element.name,id:element.id}));
   
     return li;
   });
