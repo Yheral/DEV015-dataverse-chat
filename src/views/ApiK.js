@@ -31,7 +31,6 @@ export function Apik(props)
         }
     });
     //ejecutar un advent listener
-    //verificar el submit si sale un error
     return viewEl;
     }
 //importa set apikey, para cuanddo el boton 

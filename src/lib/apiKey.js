@@ -3,10 +3,10 @@ export const getApiKey = () => {
     //Implementamos el localstorage para buscar un dato guardado como apikey
     return localStorage.getItem('apiKey');
  };
- 
+
  export const setApiKey = (key) => {
    // Implementa el código para guardar la API KEY en Local Storage
   // name = nombre del elemento
   // content = Contenido del elemento
-   localStorage.setItem('apiKey',key);
+  return localStorage.setItem('apiKey',key);
  }; 
