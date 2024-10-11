@@ -1,6 +1,7 @@
 import {Chat} from "./views/Chat.js";
 import { Error } from "./views/Error.js";
-import { Apik } from "./views/ApiK.js";
+import { Apik } from './views/ApiK.js';
+
 let ROUTES = {};
 let rootEl;
 

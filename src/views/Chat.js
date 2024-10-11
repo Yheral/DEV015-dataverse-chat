@@ -58,5 +58,3 @@ viewEl.innerHTML = `
 return viewEl;
 }
 
-//usar la función de comunicate e importar
-//usar la función de comunicate e importar

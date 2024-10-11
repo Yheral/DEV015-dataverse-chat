@@ -12,7 +12,7 @@ const routes = {
   '/about': About,
   '/chat': Chat,
   '/error':Error,
-  '/apikey':Apik,
+  '/apikey': Apik,
 
 };
 // Assign the routes

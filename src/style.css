@@ -1,111 +1,151 @@
 :root {
-  --celeste:#90eef9;
+  --celeste: #90eef9;
   --rojo: #c00f0c;
-  --plomo:#d9d9d9;
-  --negro:#000;
-  --blanco:#ffff;
- }
-header
-{
+  --plomo: #d9d9d9;
+  --negro: #000;
+  --blanco: #fff; /* Corregido: el valor hexadecimal correcto para blanco es #fff */
+}
+
+body {
+  background-color: var(--celeste); /* Cambiado a var(--celeste) para consistencia */
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 20px; /* Tamaño de fuente general */
+  margin: 0; /* Eliminar margen por defecto */
+  padding: 0; /* Eliminar padding por defecto */
+}
+
+header {
   height: 50vh; /* Ocupa toda la altura de la viewport */
-  width:auto;
   background-color: var(--rojo);
-  text-align: center;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  
+  flex-direction: column;
+  text-align: center; /* Centrar el texto */
+  color: var(--blanco);
 }
-body
-{
-    background-color: skyblue;
-    font-family: 'Montserrat', sans-serif; /* Cambia la fuente a Montserrat */
-    font-size: 20px;
-  }
+
 header h1 {
-  color:var(--blanco);
-  margin-bottom: 0;
-  }
+  margin-bottom: 0; /* Sin margen inferior */
+  font-size: 40px; /* Tamaño de fuente del título */
+}
+
 header p {
-  color: black;
-  margin:0;
-  font: 10px;
+  color: var(--negro);
+  margin: 0; /* Sin margen */
+  font-size: 20px; /* Corregido: tamaño de fuente para mayor legibilidad */
 }
 
 ul {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
-  gap:20px;
-  flex-direction: row;
+  gap: 20px; /* Espaciado entre elementos */
+  padding: 0; /* Elimina el padding por defecto */
+  list-style: none; /* Elimina viñetas de la lista */
+  margin: 20px;
 }
+
 li {
   display: flex;
-  box-sizing: border-box;
-  flex: 1 1 calc(25% - 20px);
-  background-color: var(--blanco); /* Color de fondo claro */
-  border: 0.3px solid var(--plomo);
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 10px 10px 10px rgba(2, 2, 2, 2); /* Sombra suave */
-  }
-.card
-{
-  margin-left: 10px;
+  flex: 1 1 calc(25% - 20px); /* Ancho responsivo */
+  background-color: var(--blanco); 
+  border: 1px solid var(--plomo); /* Borde más visible */
+  border-radius: 15px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  padding: 10px; /* Padding interno para el contenido */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
+
+li:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente al hacer hover */
+}
+
+.card {
+  display: flex; /* Permite centrar el contenido dentro de la tarjeta */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: left; /* Centra horizontalmente los elementos */
+  text-align: left; /* Centra el texto dentro de la tarjeta */
+}
+
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 15px; /* Bordes redondeados para las imágenes */
+  margin-bottom: 10px; /* Espacio entre la imagen y el contenido de la tarjeta */
 }
 
-.chat-button
-{
+.card h3 {
+  font-size: 18px; /* Tamaño de fuente para el título de la tarjeta */
+  color: var(--negro); /* Color del texto del título */
+  margin: 0 0 5px; /* Espaciado inferior */
+}
+
+.card p {
+  font-size: 14px; /* Tamaño de fuente para la descripción */
+  color: var(--negro); /* Color del texto de la descripción */
+  margin: 0; /* Eliminar márgenes por defecto */
+}
+
+.chat-button {
   background-color: var(--rojo);
   border-radius: 30px;
   cursor: pointer;
-  color:var(--blanco);
+  color: var(--blanco);
+  padding: 10px 20px; /* Aumento de padding para mayor comodidad */
 }
 
 .chat-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto; /* Espaciado superior */
   border: 1px solid var(--plomo);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   background-color: var(--blanco);
 }
+
 .chat-header {
-  padding: 7px;
+  padding: 10px;
   background-color: var(--plomo);
   text-align: center;
 }
+
 .chat-header h2 {
-  margin: 0;
+  margin: 0; 
   font-size: 18px;
   font-weight: bold;
 }
+
 .chat-header p {
-  margin: 4px 0 0;
+  margin: 4px 0 0; 
   font-size: 14px;
   color: var(--negro);
 }
+.chat-header href {
+  font-size: 14px;
+}
+
 .chat-box {
   padding: 16px;
-  height: 300px;
+  height: 300px; 
   background-color: var(--blanco);
+  overflow-y: auto; /* Agregado: desplazamiento si el contenido es extenso */
 }
+
 .chat-input-container {
   display: flex;
   padding: 12px;
   background-color: var(--blanco);
 }
+
 .chat-input {
   flex-grow: 1;
   padding: 8px;
   font-size: 14px;
 }
+
 .chat-send-btn {
   margin-left: 8px;
   padding: 8px 16px;
@@ -114,7 +154,149 @@ li {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .chat-send-btn:hover {
-  background-color: var(--plomo);
-  color: var(--negro)
+  background-color: darken(var(--rojo), 10%);
+}
+
+.page-title {
+  background-color: var(--rojo); 
+  padding: 20px; 
+  text-align: center; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.page-title h1 {
+  color: var(--blanco); 
+  font-size: 24px; 
+  margin: 0; 
+  font-weight: 600; 
+  letter-spacing: 0.5px; 
+  text-transform: uppercase; 
+  line-height: 1.2; 
+}
+
+.api-container {
+  padding: 20px; /* Añadido para mejorar la estética */
+}
+
+.api-container h1 {
+  font-size: 24px; 
+  color: var(--negro); 
+  margin-bottom: 20px; 
+  text-align: center; 
+}
+
+.api-container input {
+  width: 90%; /* Ancho completo */
+  padding: 12px; /* Aumento de padding */
+  font-size: 14px; /* Ajuste de tamaño de fuente */
+  margin-bottom: 10px; 
+  border: 1px solid var(--plomo);
+  border-radius: 4px;
+}
+
+.api-container button {
+  background-color: var(--rojo);
+  color: var(--blanco);
+  padding: 12px; /* Mayor padding */
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 14px; /* Tamaño de fuente más legible */
+}
+
+.api-container button:hover {
+  background-color: darken(var(--rojo), 10%);
+}
+
+.api-container message {
+  margin-top: 15px; 
+  font-size: 14px; 
+  font-weight: bold; 
+}
+
+.key-button {
+  background-color: var(--rojo); /* Color de fondo del botón */
+  color: var(--blanco); /* Color del texto */
+  padding: 10px 15px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+}
+/* Estilo para el enlace */
+.web-link {
+  display: inline-block; /* Asegura que el enlace tenga un comportamiento de bloque */
+  margin-top: 10px; /* Espacio superior */
+  padding: 12px; /* Espaciado interno */
+  color: var(blue); /* Color del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Eliminar subrayado */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.chat-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-input-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.chat-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-send-btn {
+  padding: 10px 20px;
+  background-color: var(--rojo);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos adicionales para los mensajes */
+.chat-box div {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* ... (tus estilos existentes) */
+
+.user-message {
+  background-color: var(--celeste);
+  text-align: right;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.assistant-message {
+  background-color: var(--rojo);
+  padding: 10px;
+  border-radius: 5px;
 }

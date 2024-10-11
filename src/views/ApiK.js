@@ -1,11 +1,16 @@
 import { setApiKey } from "../lib/apiKey.js";
-
+import Title from "../components/pageTittle.js";
 
 export function Apik(props)
 {
     const viewEl=document.createElement('div');
 
-    viewEl.innerHTML=`
+
+    const title = Title(); // Crea una instancia del componente page tittle
+    viewEl.appendChild(title); // Añade el title al contenedor
+
+    viewEl.className = 'api-container'; // Clase para el contenedor principal
+    viewEl.innerHTML+=`
     <h1>Agregar API KEY</h1>
     <input type="text" id="apik" name="apik" placeholder="Ingresa/pega aquí tu API KEY aquí">
     <button id="save" name="save">Guardar API KEY</button>
@@ -33,5 +38,3 @@ export function Apik(props)
     //ejecutar un advent listener
     return viewEl;
     }
-//importa set apikey, para cuanddo el boton 
-//add event para guardar la apikey
