@@ -1,9 +1,9 @@
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 export function Chat(props) {
 
-const viewEl = document.createElement('div');
-  
-viewEl.innerHTML = `
+  const viewEl = document.createElement('div');
+
+  viewEl.innerHTML = `
 <div class="chat-container">
     <div class="chat-header">
         <h2>Chat con ${props.name}</h2>
@@ -50,11 +50,11 @@ viewEl.innerHTML = `
           chatMessagesEl.scrollTop = chatMessagesEl.scrollHeight;
         })
         .catch((error) => {
-          console.error('Error al comunicarse con OpenAI:', error);
+          alert(`Ocurrió un error al comunicarse con OpenAI: ${error.message}`);
         });
     }
   });
 
-return viewEl;
+  return viewEl;
 }
 

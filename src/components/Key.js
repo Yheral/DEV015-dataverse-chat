@@ -1,17 +1,22 @@
-// components/GoToKeyButton.js
-import { navigateTo } from "../router.js"; // Asegúrate de importar navigateTo
+import { navigateTo } from "../router.js";
 
-function GoToKeyButton() {
-    const button = document.createElement('button');
-    button.id = 'keyButton';
-    button.innerText = 'Ir a Key'; // Texto del botón
+function Key() {
+  // Crear el elemento header
+  const keyElement = document.createElement('nav');
 
-    // Agregar evento click para el botón que lleva a la vista Key
-    button.addEventListener('click', () => {
-        navigateTo('/apikey'); // Cambia a la vista de Key (API Key)
-    });
+  // Definir el contenido del header
+  keyElement.innerHTML = `
+    <button id="apiKeyBtn">Ir a API Key</button>
+  `;
 
-    return button; // Retorna el botón creado
+  // Agregar funcionalidad de navegación a los botones
+  const apiKeyBtn = keyElement.querySelector('#apiKeyBtn');
+
+  apiKeyBtn.addEventListener('click', () => {
+    navigateTo('/apikey'); // Navega a la vista de API Key
+  });
+
+  return keyElement;
 }
 
-export default GoToKeyButton; // Exporta el componente del botón
+export default Key;

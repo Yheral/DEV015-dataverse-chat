@@ -1,7 +1,3 @@
-import {Chat} from "./views/Chat.js";
-import { Error } from "./views/Error.js";
-import { Apik } from './views/ApiK.js';
-
 let ROUTES = {};
 let rootEl;
 
@@ -15,7 +11,7 @@ export const setRoutes = (routes) => {
   // optional Throw errors if routes isn't an object
   // optional Throw errors if routes doesn't define an /error route
   // assign ROUTES
-ROUTES=routes;
+  ROUTES=routes;
 
 }
 export const queryStringToObject = (queryString) => {

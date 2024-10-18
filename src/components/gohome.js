@@ -13,7 +13,6 @@ function Key() {
 
   // Agregar funcionalidad de navegación a los botones
   const apiKeyBtn = keyElement.querySelector('#apiKeyBtn');
-  const homeBtn = keyElement.querySelector('#homeBtn');
 
   apiKeyBtn.addEventListener('click', () => {
     navigateTo('/apikey'); // Navega a la vista de API Key

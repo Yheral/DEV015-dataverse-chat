@@ -2,6 +2,8 @@
 
 import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
 
+
+
 describe('getApiKey', () => {
   it('debería devolver el valor de la API Key', () => {
     localStorage.setItem('apiKey', '12345'); // Establecemos un valor en localStorage

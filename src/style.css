@@ -1,5 +1,5 @@
 :root {
-  --celeste: #90eef9;
+  --celeste: #d9d9d9;
   --rojo: #c00f0c;
   --plomo: #d9d9d9;
   --negro: #000;
@@ -299,4 +299,22 @@ li:hover {
   background-color: var(--rojo);
   padding: 10px;
   border-radius: 5px;
+}
+.styled-button {
+  background-color: var(--negro);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.styled-button:hover {
+  background-color: var(--negro); /* Efecto de hover */
+  transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
 }
